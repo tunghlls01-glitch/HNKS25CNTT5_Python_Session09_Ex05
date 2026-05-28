@@ -67,6 +67,7 @@ while True:
         """))
     except:
         print("Không được nhập chữ, phải nhập số nguyên")
+        continue
     match choice:
         case 1: 
             if order_list == []:
@@ -76,7 +77,7 @@ while True:
                 for index, value in enumerate(order_list, 1):
                     print(f"{index}. {value}")
         case 2: 
-            search_order_list = input("Mời bạn nhập đơn hàng cần tìm: ")
+            search_order_list = input("Mời bạn nhập đơn hàng cần tìm: ").strip().upper()
             for index, value in enumerate(order_list):
                 new_list = value.split("-")
                 id_order = new_list[0].strip()
@@ -89,7 +90,7 @@ while True:
                     else:
                         print("Chỉ có thể gán tài xế cho đơn hàng đang chờ xử lý")
         case 3:
-            search_order_list = input("Mời bạn nhập đơn hàng cần cập nhật trạng thái giao hàng: ")
+            search_order_list = input("Mời bạn nhập đơn hàng cần cập nhật trạng thái giao hàng: ").strip().upper()
             for index, value in enumerate(order_list):
                 new_list = value.split("-")
                 id_order = new_list[0].strip()
